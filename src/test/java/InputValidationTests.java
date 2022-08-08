@@ -6,9 +6,9 @@ import page.MainPage;
 import static org.junit.Assert.assertEquals;
 
 /*Тест: Корректность ошибок для полей формы заказа.
-Входные данные: Поле, Ожидаемое валидационное сообщение*/
+Входные данные: Поле, Валидационное сообщение*/
 @RunWith(Parameterized.class)
-public class InputValidationTests extends BaseTest{
+public class InputValidationTests extends BaseTest {
 
     private final String input;
     private final String expectedValidation;
@@ -18,9 +18,9 @@ public class InputValidationTests extends BaseTest{
         this.expectedValidation = expectedValidation;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: Поле = {0}, Валидационное сообщение = {1}")
     public static Object[][] getInputAndValidationData() {
-        return new Object[][] {
+        return new Object[][]{
                 {"Имя", "Введите корректное имя"},
                 {"Фамилия", "Введите корректную фамилию"},
                 {"Адрес: куда привезти заказ", "Введите корректный адрес"},

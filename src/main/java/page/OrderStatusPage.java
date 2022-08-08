@@ -24,7 +24,7 @@ public class OrderStatusPage {
 
     //Метод проверяет наличие блока "Заказ не найден" и отсутствие блока с информацией о заказе
     public boolean checkOrderNotFoundBlockIsDisplayed() {
-        if(orderNotFoundBlock.isDisplayed()) {
+        if (orderNotFoundBlock.isDisplayed()) {
             try {
                 return !orderInfoBlock.isDisplayed();
             } catch (NoSuchElementException e) {

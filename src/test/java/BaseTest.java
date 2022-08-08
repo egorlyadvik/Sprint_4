@@ -30,7 +30,7 @@ public class BaseTest {
 
     //Метод переключает драйвер на новое окно и ожидает отображения URL
     public void switchToNewWindow() {
-        for(String winHandle : driver.getWindowHandles()){
+        for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
         new WebDriverWait(driver, 10)

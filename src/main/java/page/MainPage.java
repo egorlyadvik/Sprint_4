@@ -53,44 +53,52 @@ public class MainPage {
     //Метод скроллит страницу до вопроса и кликает на него
     public MainPage scrollAndClickQuestion(String question) {
         WebElement questionElement = driver.findElement(By.xpath(".//div[text()='" + question + "']"));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", questionElement);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", questionElement);
         questionElement.click();
         return this;
     }
+
     //Метод возвращает текст ответа на выбранный вопрос
     public String getAnswerText() {
         new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.visibilityOf(answerPanel));
         return answerPanel.getText();
     }
+
     //Метод кликает на верхнюю кнопку "Заказать"
     public OrderPage clickUpperOrderButton() {
         upperOrderButton.click();
         return new OrderPage(driver);
     }
+
     //Метод кликает на нижнюю кнопку "Заказать"
     public OrderPage clickLowerOrderButton() {
         lowerOrderButton.click();
         return new OrderPage(driver);
     }
+
     //Метод кликает на логотип "Самоката"
     public void clickScooterLogo() {
         scooterLogo.click();
     }
+
     //Метод кликает на логотип Яндекса
     public void clickYandexLogo() {
         yandexLogo.click();
     }
+
     //Метод кликает на кнопку "Статус заказа"
     public MainPage clickOrderStatusButton() {
         orderStatusButton.click();
         return this;
     }
+
     //Метод заполняет поле ввода номера заказа
     public MainPage fillOrderNumberInput(String orderNumber) {
         orderNumberInput.sendKeys(orderNumber);
         return this;
     }
+
     //Метод кликает на кнопку поиска заказа
     public OrderStatusPage clickFindOrderButton() {
         findOrderInput.click();
